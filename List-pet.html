@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>List a Pet | PawConnect</title>
+  <meta name="description" content="Create a listing for a pet that needs a new home.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="list" data-view="list">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div id="site-header"></div>
+  <noscript><div class="container"><p class="notice">PawConnect needs JavaScript to show its menu and to save listings. Please turn JavaScript on.</p></div></noscript>
+
+  <main id="main">
+    <section class="page-title">
+      <div class="container">
+        <h1>List a pet for adoption</h1>
+        <p>Tell visitors about the pet who needs a home. Fields marked with <span class="req" aria-hidden="true">*</span><span class="sr-only">an asterisk</span> are required.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container" style="max-width:860px">
+        
+        <div id="storage-warning" role="alert" hidden></div>
+
+        <form id="list-form" class="form-card" novalidate>
+          <div class="form-grid">
+            <div class="field">
+              <label for="petName">Pet name <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="petName" name="petName" autocomplete="off" aria-required="true" aria-describedby="petName-error">
+              <p class="error" id="petName-error" aria-live="polite" hidden></p>
+            </div>
+
+            <div class="field">
+              <label for="petType">Animal type <span class="req" aria-hidden="true">*</span></label>
+              <select id="petType" name="petType" aria-required="true" aria-describedby="petType-error"></select>
+              <p class="error" id="petType-error" aria-live="polite" hidden></p>
+            </div>
+
+            <div class="field">
+              <label for="breed">Breed <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="breed" name="breed" autocomplete="off" aria-required="true" aria-describedby="breed-error">
+              <p class="error" id="breed-error" aria-live="polite" hidden></p>
+            </div>
+
+            <div class="field">
+              <label for="ageValue">Age <span class="req" aria-hidden="true">*</span></label>
+              <div class="age-row">
+                <input type="number" id="ageValue" name="ageValue" min="0" step="any" inputmode="decimal" aria-required="true" aria-describedby="ageValue-error">
+                <select id="ageUnit" name="ageUnit" aria-label="Age unit">
+                  <option value="years" selected>Years</option>
+                  <option value="months">Months</option>
+                </select>
+              </div>
+              <p class="error" id="ageValue-error" aria-live="polite" hidden></p>
+            </div>
+
+            <div class="field">
+              <label for="gender">Gender <span class="req" aria-hidden="true">*</span></label>
+              <select id="gender" name="gender" aria-required="true" aria-describedby="gender-error">
+                <option value="">Choose gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Unknown">Unknown</option>
+              </select>
+              <p class="error" id="gender-error" aria-live="polite" hidden></p>
+            </div>
+
+            <div class="field">
+              <label for="location">Location <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="location" name="location" autocomplete="off" placeholder="City or area" aria-required="true" aria-describedby="location-error">
+              <p class="error" id="location-error" aria-live="polite" hidden></p>
+            </div>
+
+            <div class="field full">
+              <label for="description">Description <span class="req" aria-hidden="true">*</span></label>
+              <textarea id="description" name="description" aria-required="true" aria-describedby="description-hint description-error"></textarea>
+              <span class="hint" id="description-hint">At least 30 characters. Mention routine, habits and the kind of home that would suit the pet.</span>
+              <p class="error" id="description-error" aria-live="polite" hidden></p>
+            </div>
+
+            <div class="field full">
+              <label for="personality">Personality (optional)</label>
+              <input type="text" id="personality" name="personality" autocomplete="off" placeholder="e.g. calm, playful, good with children" aria-describedby="personality-error">
+              <p class="error" id="personality-error" aria-live="polite" hidden></p>
+            </div>
+
+            <div class="field full">
+              <label for="health">Health information </label>
+              <textarea id="health" name="health" style="min-height:80px" placeholder="Vaccinations, neutering, medical needs, if known" aria-describedby="health-error"></textarea>
+              <p class="error" id="health-error" aria-live="polite" hidden></p>
+            </div>
+
+            <div class="field full">
+              <label for="photo">Photo(optional)</label>
+              <input type="file" id="photo" name="photo" accept="image/*" aria-describedby="photo-hint photo-error">
+              <span class="hint" id="photo-hint">JPG, PNG or WebP. Large photos are shrunk automatically so they fit in browser storage. Without a photo, a placeholder is shown.</span>
+              <p class="error" id="photo-error" aria-live="polite" hidden></p>
+              <div class="photo-preview" id="photo-preview" hidden>
+                <img id="photo-preview-img" alt="Preview of the photo you selected">
+                <button type="button" class="btn btn--outline btn--small" id="remove-photo">Remove photo</button>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="contactName">Contact name <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="contactName" name="contactName" autocomplete="name" aria-required="true" aria-describedby="contactName-error">
+              <p class="error" id="contactName-error" aria-live="polite" hidden></p>
+            </div>
+
+            <div class="field">
+              <label for="contact">Contact email or phone <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="contact" name="contact" autocomplete="email" aria-required="true" aria-describedby="contact-error">
+              <p class="error" id="contact-error" aria-live="polite" hidden></p>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn--primary">Save listing</button>
+            <button type="reset" class="btn btn--outline" id="reset-btn">Reset form</button>
+          </div>
+          <div id="list-status" role="status" hidden></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

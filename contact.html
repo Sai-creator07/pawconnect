@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Us | PawConnect</title>
+  <meta name="description" content="Get in touch with the PawConnect team.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="contact" data-view="contact">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div id="site-header"></div>
+  <noscript><div class="container"><p class="notice">PawConnect needs JavaScript to show its menu and check the form. Please turn JavaScript on.</p></div></noscript>
+
+  <main id="main">
+    <section class="page-title">
+      <div class="container">
+        <h1>Contact us</h1>
+        <p>Questions about adopting, listing a pet, or this project? Send us a message.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container two-col">
+        <div>
+          <h2>Our details</h2>
+          <ul class="info-list">
+            <li><strong>Email</strong>saishubhravallinaik@gmail.com</li>
+            <li><strong>Phone</strong>+91 91XXX XXX10</li>
+            <li><strong>Address</strong>davv, indore</li>
+            <li><strong>Hours</strong>Monday to Friday, 9:00 to 17:00</li>
+          </ul>
+     </p>
+        </div>
+
+        <div>
+
+          <form id="contact-form" class="form-card" novalidate>
+            <div class="form-grid">
+              <div class="field">
+                <label for="cName">Name <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="cName" name="cName" autocomplete="name" aria-required="true" aria-describedby="cName-error">
+                <p class="error" id="cName-error" aria-live="polite" hidden></p>
+              </div>
+              <div class="field">
+                <label for="cEmail">Email <span class="req" aria-hidden="true">*</span></label>
+                <input type="email" id="cEmail" name="cEmail" autocomplete="email" aria-required="true" aria-describedby="cEmail-error">
+                <p class="error" id="cEmail-error" aria-live="polite" hidden></p>
+              </div>
+              <div class="field full">
+                <label for="cSubject">Subject <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="cSubject" name="cSubject" autocomplete="off" aria-required="true" aria-describedby="cSubject-error">
+                <p class="error" id="cSubject-error" aria-live="polite" hidden></p>
+              </div>
+              <div class="field full">
+                <label for="cMessage">Message <span class="req" aria-hidden="true">*</span></label>
+                <textarea id="cMessage" name="cMessage" aria-required="true" aria-describedby="cMessage-error"></textarea>
+                <p class="error" id="cMessage-error" aria-live="polite" hidden></p>
+              </div>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn btn--primary">Send message </button>
+            </div>
+            <div id="contact-status" role="status" hidden></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

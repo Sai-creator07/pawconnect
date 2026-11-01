@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Adopt a Pet | PawConnect</title>
+  <meta name="description" content="Search and filter pets available for adoption on PawConnect.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="adopt" data-view="adopt">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div id="site-header"></div>
+  <noscript><div class="container"><p class="notice">PawConnect needs JavaScript to show its menu and pet listings. Please turn JavaScript on.</p></div></noscript>
+
+  <main id="main">
+    <section class="page-title">
+      <div class="container">
+        <h1>Adopt a pet</h1>
+        <p>Search by name or breed, then narrow the list by type, age and location.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="notice"><strong>Sample data.</strong> Pets marked &ldquo;Sample&rdquo; are fictional. Pets marked &ldquo;Your listing&rdquo; were added in this browser using the List a Pet form.</div>
+
+        <form id="filter-form" class="filters" role="search" aria-label="Search and filter pets">
+          <div class="field">
+            <label for="search">Search by name or breed</label>
+            <input type="search" id="search" name="search" placeholder="e.g. Luna or Retriever" autocomplete="off">
+          </div>
+          <div class="field">
+            <label for="filter-type">Animal type</label>
+            <select id="filter-type" name="type"></select>
+          </div>
+          <div class="field">
+            <label for="filter-age">Age</label>
+            <select id="filter-age" name="age"></select>
+          </div>
+          <div class="field">
+            <label for="filter-location">Location</label>
+            <select id="filter-location" name="location"></select>
+          </div>
+          <button type="button" id="clear-filters" class="btn btn--outline">Clear filters</button>
+        </form>
+
+        <p id="results-count" class="results-count" role="status" aria-live="polite"></p>
+        <div id="pet-grid" class="pet-grid"></div>
+
+        <div id="empty-state" class="empty-state" hidden>
+          <h2>No pets match your search</h2>
+          <p>Try a different name or breed, or remove a filter to see more animals.</p>
+          <button type="button" id="empty-clear" class="btn btn--primary">Clear filters</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
